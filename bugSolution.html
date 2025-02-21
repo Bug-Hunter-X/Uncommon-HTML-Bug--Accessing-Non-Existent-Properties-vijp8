@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Uncommon HTML Bug Solution</title>
+</head>
+<body>
+  <div id="myDiv">
+    This is some text.
+  </div>
+
+  <script>
+    const divElement = document.getElementById("myDiv");
+    // Check if the property exists before accessing it
+    if (divElement && "nonExistentProperty" in divElement) {
+      let x = divElement.nonExistentProperty;
+      console.log(x);
+    } else {
+      console.log("Property does not exist.");
+    }
+  </script>
+</body>
+</html>
